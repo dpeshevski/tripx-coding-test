@@ -1,0 +1,16 @@
+.listWrap {
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  place-content: stretch space-evenly;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .listWrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

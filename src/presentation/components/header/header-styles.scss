@@ -1,0 +1,47 @@
+@import "../../styles/colors.scss";
+
+.headerWrap {
+  display: flex;
+  background-color: $black;
+  justify-content: center;
+
+  .headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 800px;
+    flex-grow: 1;
+    padding: 24px 40px;
+
+    img {
+      width: 60px;
+      align-self: center;
+    }
+
+    .userInfo {
+      color: $secondaryColor;
+      margin-left: auto;
+      padding-right: 30px;
+      font-weight: bold;
+    }
+
+    .logoutWrap {
+      a {
+        border: 1px solid $disabledBackground;
+        border-radius: 8px;
+        padding: 5px;
+
+        &:hover {
+          background-color: $secondaryColor;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .headerWrap {
+    border-top-width: 20px;
+  }
+}

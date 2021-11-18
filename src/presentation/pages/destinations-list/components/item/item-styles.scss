@@ -1,0 +1,122 @@
+@import "../../../../styles/colors.scss";
+
+.destinationItemContainer {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-bottom: 33px;
+  border: 1px solid rgb(244, 229, 211);
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba($black, .2);
+  transition: .2s;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba($black, .2);
+    transform: scale(1.2);
+  }
+  
+  .destinationItemContent {
+    display: inline-flex;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+    place-content: stretch flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    max-width: 478px;
+    border: 1px solid $borderColor;
+    border-radius: 4px;
+    flex-grow: 1;
+    background-image:
+      linear-gradient(to right, rgba($primaryLight, 0.1), rgba($primaryLight, 0.1)),
+      linear-gradient(to right, $white, $white);
+    background-size: 54px 100%, 100% 100%;
+
+    img {
+      width: 120px;
+      background-size: cover;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .destinationName {
+      display: flex;
+      flex-flow: row nowrap;
+      -webkit-box-pack: start;
+      place-content: stretch flex-start;
+      -webkit-box-align: center;
+      align-items: center;
+      width: 215px;
+      padding: 15px;
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      color: $secondaryLight;
+    }
+  
+    .infoCount {
+      display: flex;
+      flex-flow: column nowrap;
+      -webkit-box-pack: start;
+      place-content: stretch flex-start;
+      -webkit-box-align: stretch;
+      align-items: stretch;
+
+      .destinationCount,
+      .hotelsCount {
+        height: 50px;
+        padding: 14px;
+        background-color: rgba($ternaryBackground, .1);
+        border-style: solid;
+        border-image: initial;
+        border-color: rgba($borderColor, .5);
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.3px;
+        color: $secondaryColor;
+        border-width: 0px 0px 1px 1px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .destinationItemContainer {
+    flex-basis: 100%;
+    max-width: 478px;
+
+    .destinationItemContent {
+      img {
+        width: 100%;
+        height: 150px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0px;
+      }
+
+      .destinationName {
+        width: initial;
+        flex: 1 auto; 
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .destinationItemContainer {
+    .destinationItemContent {
+      flex-direction: column;
+
+      .infoCount {
+        flex-direction: row;
+        width: 100%;
+        p {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+}
